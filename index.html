@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RDS Bus Service at Your Foot Stape</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="brand">RDS BUS SERVICE</div>
+      <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div id="user-name" style="font-weight:600px">Guest</div>
+      <button class="btn" id="loginOpenBtn">LOGIN</button>
+    </div>
+  </nav>
+
+  <main class="overlay">
+    <section class="panel">
+      <!-- LEFT: welcome + login -->
+      <div class="left">
+        <div class="welcome">Welcome to RDS BusFinder — search routes & buses quickly</div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="role-tabs" aria-hidden>
+            <button class="role active" data-role="administrator">Administrator</button>
+            <button class="role" data-role="admin">Admin</button>
+            <button class="role" data-role="driver">Driver</button>
+            <button class="role" data-role="user">User</button>
+          </div>
+          <div style="font-size:13px; color:#555">Signed out</div>
+        </div>
+
+        <div class="login-card">
+          <div id="loginRoleTitle" style="font-weight:700; margin-bottom:8px;">Administrator Login</div>
+
+          <div class="form-row">
+            <label for="userid">User ID</label>
+            <input id="userid" placeholder="enter user id (email or phone no.)">
+          </div>
+
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="password">
+          </div>
+
+          <div class="helper" style="margin-top:6px;">
+            <div>
+              <button class="btn" id="loginBtn">Sign in</button>
+              <button class="btn ghost" id="createAccBtn">Create account</button>
+            </div>
+            <div>
+              <a href="#" id="forgotPwd">Forgot password?</a>
+            </div>
+          </div>
+
+          <div style="margin-top:10px; font-size:13px; color:#444;">
+            Quick actions: <strong>Administrator</strong> has full rights. <strong>Driver</strong> sees routes assigned to them.
+          </div>
+        </div>
+
+        <!-- small profile preview -->
+        <div style="margin-top:8px; padding:10px; border-radius:10px; background:var(--glass); border:1px solid rgba(0,0,0,0.04);">
+          <strong>Your Name:</strong> <span id="displayName">Not logged in</span><br>
+          <strong>Role:</strong> <span id="displayRole">-</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: search boxes -->
+      <div class="right">
+        <div class="big-grid">
+          <div class="search-card" onclick="alert('Search for Route clicked')">SEARCH FOR ROUTE</div>
+          <div class="search-card" onclick="alert('Search for Bus Number clicked')">SEARCH BY BUS NUMBER</div>
+          <div class="search-card" onclick="alert('Search for School Bus clicked')">SEARCH FOR SCHOOL BUS</div>
+          <div class="search-card" onclick="alert('Search for Route Number clicked')">SEARCH FOR ROUTE NUMBER</div>
+        </div>
+
+        <div class="meta">
+          <div>Contact: <strong id="contactPhone">+91-XXXXXXXXXX</strong> | 
+            <a id="contactEmail" href="mailto:info@example.com">info@example.com</a>
+          </div>
+          <div style="font-size:13px; color:#777">© BusFinder</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Create Account / OTP Modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h3>Create Account</h3>
+      <div class="form-row">
+        <label for="newId">User ID</label>
+        <input id="newId" placeholder="email or user id">
+      </div>
+      <div class="form-row">
+        <label for="newOtp">OTP</label>
+        <input id="newOtp" placeholder="enter OTP">
+        <button class="btn ghost" id="sendOtpBtn" style="margin-left:8px;">Send OTP</button>
+      </div>
+      <div class="form-row">
+        <label for="newPwd">Password</label>
+        <input id="newPwd" type="password" placeholder="password">
+      </div>
+      <div class="form-row">
+        <label for="confirmPwd">Confirm</label>
+        <input id="confirmPwd" type="password" placeholder="confirm password">
+      </div>
+
+      <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px;">
+        <button class="btn ghost" id="closeModal">Cancel</button>
+        <button class="btn" id="createBtn">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
