@@ -156,7 +156,7 @@ body{
 .row-between{ display:flex; justify-content:space-between; gap:10px; }
 
 /* responsive */
-@media (max-width:1100px){
+/*@media (max-width:1100px){
   .panel{ width:calc(100% - 40px); grid-template-columns:1fr; }
   .right{ order:2; }
   .left{ order:1; }
@@ -164,4 +164,54 @@ body{
 @media (max-width:520px){
   .modal{ width:92%; }
   .brand{ display:none; }
+}*/
+
+@media (max-width:520px){
+  /* hide brand to save space */
+  .brand{ display:none; }
+
+  /* stack navbar links neatly */
+  .nav-links a{
+    font-size:14px;
+    padding:6px 10px;
+  }
+
+  /* make panel single column */
+  .panel{
+    width:100%;
+    padding:12px;
+    grid-template-columns: 1fr;
+    gap:12px;
+  }
+
+  /* make login card fill width */
+  .login-card{
+    padding:10px;
+    font-size:14px;
+  }
+
+  /* search grid: 1 per row instead of 2 */
+  .big-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .search-card{
+    font-size:16px;
+    min-height:80px;
+  }
+
+  /* meta footer smaller */
+  .meta{
+    flex-direction:column;
+    gap:6px;
+    font-size:12px;
+  }
+
+  /* modal already has width:92% but make inputs smaller */
+  .modal input{
+    font-size:14px;
+    padding:8px;
+  }
 }
+
+
